@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>#7_Days_Of_Code (1/7)</title>
+  <a href="index.html" class="button1">Inicio</a>
+</head>
+    <style>
+        :root {
+            --background-color: #1c1c1c;
+            --text-color: #f4f4f4;
+            --header-gradient-start: #4e4e50;
+            --header-gradient-end: #7c7d7e;
+            --header-text-color: #f9c74f;
+            --shadow-color: #000;
+            --button-color: #6a994e;
+            --button-hover-color: #f94144;
+            --font-family-base: 'Press Start 2P', monospace;
+            --link-bg-color: #3a3a3c;
+            --link-hover-bg-color: #f94144;
+            --footer-bg-color: #4e4e50;
+        }
+
+        .button1 { 
+            background-color: var(--primary-color); 
+            color: var(--text-color); 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-size: 1rem; 
+            cursor: pointer;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100; /* Asegura que el botón esté por encima de otros elementos */ 
+        }
+
+        .button1:hover { 
+            background-color: var(--link-hover-bg-color); 
+            color: var(--text-color); 
+        }
+        .button1 a {
+            color: inherit; /* Hereda el color del botón */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            height: 100vh; /* Ahora ocupa toda la altura de la ventana */
+            display: flex;
+            flex-direction: column; /* Coloca elementos en columna */
+            justify-content: space-between; /* Distribuye espacio de manera uniforme */
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+            color: var(--header-text-color);
+            padding: 1rem;
+            font-size: xx-large;
+            font-family: var(--font-family-base);
+            font-style: oblique;
+        }
+
+        .contenedorPrincipal {
+            display: flex;
+            flex-direction:row; /* Cambia a columna para organizar los elementos verticalmente */
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            flex: 1; /* Ajusta para ocupar el espacio disponible */
+            margin-bottom: 3.5rem; /* Añade espacio para evitar que el footer se solape */
+            box-shadow: 3px 3px 5px var(--shadow-color);
+        }
+
+        .caja {
+            background-color: var(--header-gradient-end);
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            padding: 10px;
+            text-align: center;
+            color: var(--header-text-color);
+            width: 40%;
+            max-height: 100%;
+        }
+
+        .caja h2 {
+             color: var(--header-text-color); 
+             text-shadow: 1px 1px var(--shadow-color); 
+             padding: 10px; 
+             margin-bottom: fixed; 
+             height: 10%; 
+             z-index: 1000;
+        }
+
+        .boton {
+            background-color: var(--button-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            margin-bottom: 20px; 
+        }
+
+        .boton:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        #resultado2, #interacciones {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--header-gradient-end);
+            color: var(--header-text-color);
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            text-align: center;
+            padding-inline-end: 0%;
+        }
+
+        .footer {
+            display: flex; /* Flex para simplificar */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: fixed; /* Ahora está fijo en la parte inferior */
+            bottom: 0;
+            left: 0;
+            width: 100%; /* Ocupa todo el ancho */
+            height: auto; /* Ajusta la altura según el contenido */
+            background-color: var(--footer-bg-color);
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            padding: 1rem;
+            font-family: var(--font-family-base);
+            font-size: 0.8rem;
+            box-shadow: 0 -2px 5px var(--shadow-color);
+            z-index: 10;
+        }
+
+        .footerp1, .footerp2, .footerp3 {
+            margin: 0;
+            padding: 0.5rem; /* Espaciado dentro del texto */
+            font-size: 1rem;
+            text-align: center;
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            font-family: var(--font-family-base);
+        }
+    </style>
+</head>
+<body>
+    <header>Comparador de Variables y Números</header>
+
+<div id="contenedorPrincipal" class="contenedorPrincipal">
+
+    <!-- Caja EJERCICIO -->
+    <div id="cajaEjercicio" class="caja">
+        <h2>EJERCICIO</h2>
+        <p>Este ejercicio compara diferentes variables para verificar su valor y tipo. Haz clic en el botón "Realizar Ejercicio" para ver los resultados; Puedes pulsar el botón "Reiniciar Ejercicio" cuando desees😊.</p>
+        <button class="boton" id="ejercicio">Realizar Ejercicio</button>
+        <button class="boton" id="reiniciarEjercicio">Reiniciar Ejercicio</button>
+        <div id="resultado1" class="resultado1"></div>
+    </div>
+    
+
+    <!-- Caja COMPARACIÓN -->
+    <div id="cajaComparacion" class="caja">
+        <h2>COMPARACIÓN</h2>
+        <button class="boton" id="comparacionUsuario">Comparación</button>
+        <button id="reiniciarUsuario" class="boton">Reiniciar Comparación</button>
+        <div id="interacciones" class="interacciones">
+            <p id="indicaciones">Ingresa dos números para realizar la comparación, después, pulsa el botón "Realizar Comparación", después pulsa el botón "Reiniciar Compraración" al termino😊.</p>
+            <input type="number" id="primernumero" placeholder="Ingresa un número" style="display: none;">
+            <input type="number" id="segundonumero" placeholder="Ingresa un número" style="display: none;">
+            <button class="boton" id="enviar" style="display: none;">Realizar Comparación</button>
+        </div>
+        <div id="resultado2" class="resultado2"></div>
+    </div>
+
+</div>
+<footer>
+    <p class="footerp1">Desarrollo del programa por: José Ángel Luna Delgado, idea de diseño del estilo Metal Slug aportado por: Luis Daniel Luna Delgado.</p>
+    <p class="footerp2">Programa de Formación Oracle Next Education/Alura Latam.</p>
+    <strong class="footerp3">&copy; 2025 All rights reserved.</strong>
+</footer>
+    <script>
+            
+        function ejercicio() {
+                let numeroUn = 1;
+                let stringUn = '1';
+                let numeroTreinta = 30;
+                let stringTreinta = '30';
+                let numeroDiez = 10;
+                let stringDiez = '10';
+
+                let resultado = '';
+
+                if (numeroUn == stringUn) {
+                        resultado += `Las variables ${numeroUn} y "${stringUn}" tienen el mismo valor, pero tipos diferentes.<br>`;
+                } else {
+                        resultado += `Las variables ${numeroUn} y "${stringUn}" no tienen el mismo valor.<br>`;
+                }
+                if (numeroTreinta === stringTreinta) {
+                        resultado += `Las variables ${numeroTreinta} y "${stringTreinta}" tienen el mismo valor y el mismo tipo.<br>`;
+                } else {
+                        resultado += `Las variables ${numeroTreinta} y "${stringTreinta}" no tienen el mismo tipo, pero tienen el mismo valor.<br>`;
+                }
+                if (numeroDiez == stringDiez) {
+                        resultado += `Las variables ${numeroDiez} y "${stringDiez}" tienen el mismo valor, pero tipos diferentes.<br>`;
+                } else {
+                        resultado += `Las variables ${numeroDiez} y "${stringDiez}" no tienen el mismo valor.<br>`;
+                }
+                document.getElementById('resultado1').innerHTML = resultado;
+            }
+
+        function reiniciarEjercicio() {
+                document.getElementById("ejercicio").style.display = "inline";
+                document.getElementById("ejercicio").value = ""; // Limpiar el campo de entrada
+                document.getElementById("ejercicio").focus(); // Enfocar el campo de entrada
+                document.getElementById("resultado1").textContent = "";
+                document.getElementById('resultado1').innerHTML = '';
+            }
+
+            function mostrarInputs() {
+                 // Mostrar campos y botón para ingresar números
+                document.getElementById("primernumero").style.display = "inline";
+                document.getElementById("segundonumero").style.display = "inline";
+                document.getElementById("enviar").style.display = "inline";
+    
+                // Limpieza de valores previos
+                document.getElementById("primernumero").value = "";
+                document.getElementById("segundonumero").value = "";
+            }
+
+            function comparacionUsuario() {
+                // Verificar entrada del usuario
+                const primernumero = parseInt(document.getElementById("primernumero").value);
+                const segundonumero = parseInt(document.getElementById("segundonumero").value);
+
+                // Validar que se ingresen números
+                if (isNaN(primernumero) || isNaN(segundonumero)) {
+                    document.getElementById("resultado2").textContent = "Por favor, ingresa números válidos.";
+                    return;
+                }
+
+                // Realizar la comparación
+                if (primernumero === segundonumero) {
+                    document.getElementById("resultado2").textContent = `¡Los números son iguales!`;
+                } else if (primernumero < segundonumero) {
+                    document.getElementById("resultado2").textContent = "El primer número es menor que el segundo.";
+                } else {
+                    document.getElementById("resultado2").textContent = "El primer número es mayor que el segundo.";
+                }
+            }
+
+            // Asociar eventos a los botones
+            document.getElementById("comparacionUsuario").addEventListener("click", mostrarInputs);
+            document.getElementById("enviar").addEventListener("click", comparacionUsuario);
+
+
+            function reiniciarUsuario() {
+                document.getElementById("primernumero").value = "";
+                document.getElementById("segundonumero").value = "";
+                document.getElementById("resultado2").textContent = "";
+                document.getElementById("primernumero").style.display = "none";
+                document.getElementById("segundonumero").style.display = "none";
+                document.getElementById("enviar").style.display = "none";
+            }
+
+                document.getElementById('reiniciarEjercicio').addEventListener('click', reiniciarEjercicio);
+            document.getElementById('ejercicio').addEventListener('click', ejercicio);
+            document.getElementById("comparacionUsuario").addEventListener("click", comparacionUsuario);
+            document.getElementById("reiniciarUsuario").addEventListener("click", reiniciarUsuario);
+    </script>
+</body>
+</html>
+
+

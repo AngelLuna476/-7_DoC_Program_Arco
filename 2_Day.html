@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#7_Days_Of_Code (2/7)</title>
+    <a href="index.html" class="button1">Inicio</a>
+</head>
+    <style>
+        :root {
+            --background-color: #1c1c1c;
+            --text-color: #f4f4f4;
+            --header-gradient-start: #4e4e50;
+            --header-gradient-end: #7c7d7e;
+            --header-text-color: #f9c74f;
+            --shadow-color: #000;
+            --button-color: #6a994e;
+            --button-hover-color: #f94144;
+            --font-family-base: 'Press Start 2P', monospace;
+            --link-bg-color: #3a3a3c;
+            --link-hover-bg-color: #f94144;
+            --link-active-bg-color: #6a994e;
+            --footer-bg-color: #4e4e50; /* Define el color de fondo del footer */
+        }
+
+        .button1 { 
+            background-color: var(--primary-color); 
+            color: var(--text-color); 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-size: 1rem; 
+            cursor: pointer;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */ 
+            font-family: var(--font-family-base);
+        }
+
+        .button1:hover { 
+            background-color: var(--link-hover-bg-color); 
+            color: var(--text-color); 
+        }
+        .button1 a {
+            color: inherit; /* Hereda el color del botón */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        .main {
+            padding: 20px;
+            margin: auto;
+            margin-bottom: 1%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 75vh; /* Ocupa toda la altura de la ventana */
+            background: linear-gradient(135deg, var(--background-color), var(--header-gradient-start));
+            color: var(--text-color);
+            box-shadow: 0 0 10px var(--shadow-color);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1; /* Asegura que el main esté por encima del footer */
+            font-family: var(--font-family-base);
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+            display: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between; /* Asegura que el contenido se ajuste */
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+            color: var(--header-text-color);
+            padding: 1rem;
+            font-family: var(--font-family-base);
+        }
+
+        .boton {
+            background-color: var(--button-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            font-family: var(--font-family-base);
+        }
+
+        .boton:hover {
+            background-color: var(--button-hover-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #resultado, #interacciones {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--header-gradient-end);
+            color: var(---text-color);
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            width: 80%;
+            text-align: left;
+            font-family: var(--font-family-base);
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: #000 solid 2px; /* Para visualizarlo */
+            align-self: center; /* Centra el div en la página */
+            position: relative;
+            bottom: 0;
+            left: 0;
+            align-items: center;
+        }
+
+        .resultado {
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: var(--header-gradient-end);
+            color: var(--header-text-color);
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            padding: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            right: 0;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 0rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+            height: 10vh;
+            background-color: var(--footer-bg-color);
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            padding: 1rem;
+            font-family: var(--font-family-base);
+            font-size: 0.8rem;
+            box-shadow: 0 -2px 5px var(--shadow-color);
+            border: 2px solid red; /* Para visualizarlo */
+            z-index: 10;
+            position: absolute; /* Cambiado a absolute para que esté fijo en la parte inferior */
+            bottom: 0; /* Asegura que esté en la parte inferior */
+        }
+
+        .footerp1, .footerp2, .footerp3 {
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            text-align: center;
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            font-family: var(--font-family-base);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+            z-index: 10;
+            height: 10%;
+        }
+    </style>
+<body>
+    <header class="header">
+        <h1 class="header_titulo">Cuestionario</h1>
+    </header>
+        <main class="main">
+            <p id="pregunta">Presiona el botón "Iniciar Cuestionario" para comenzar.</p>
+            <button class="boton" id="iniciarCuestionario">Iniciar Cuestionario</button>
+            <button class="boton" id="reiniciarCuestionario" style="display: none;">Reiniciar Cuestionario</button>
+            <div id="interacciones">
+                <p class="titulo_instrucciones">Instrucciones:</p>
+                <ul>
+                    <li>1. Presiona el botón "Iniciar Cuestionario" para comenzar.</li>
+                    <li>2. Responde a las preguntas que aparecen.</li>
+                    <li>3. Presiona "Enviar" para enviar tu respuesta.</li>
+                    <li>4. Al finalizar, verás un resumen de tus respuestas.</li>
+                </ul>
+            <div id="respuestas" style="display: none;">
+                <input type="text" id="inputRespuesta" placeholder="Escribe tu respuesta aquí">
+                <button class="boton" id="botonEnviar">Enviar</button>
+            </div>
+            <div class="respuesta" id="resultado"></div>
+        </main>
+        <footer>
+            <p class="footerp1">Desarrollo del programa por: José Ángel Luna Delgado, idea de diseño del estilo Metal Slug aportado por: Luis Daniel Luna Delgado.</p>
+            <p class="footerp2">Programa de Formación Oracle Next Education/Alura Latam.</p>
+            <strong class="footerp3">&copy; 2025 All rights reserved.</strong>
+        </footer>
+        <script>
+            // Variables para el cuestionario
+            const iniciarBtn = document.getElementById('iniciarCuestionario');
+            const respuestasDiv = document.getElementById('respuestas');
+            const inputRespuesta = document.getElementById('inputRespuesta');
+            const botonEnviar = document.getElementById('botonEnviar');
+            const preguntaEl = document.getElementById('pregunta');
+            const resultadoEl = document.getElementById('resultado');
+            const reiniciarBtn = document.getElementById('reiniciarCuestionario');
+            
+            let etapa = 0;
+            let nombre, edad, lenguaje, respuestaFinal;
+            
+            const preguntas = [
+                "¿Cuál es tu nombre?",
+                `¿Cuántos años tienes?`,
+                `¿Qué lenguaje de programación estás estudiando?`,
+                `¿Te gusta estudiar este lenguaje? Responde con SÍ o NO.`
+            ];
+
+            const validaciones = [
+            /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/, // Letras y espacios
+            /^\d+$/, // Solo números
+            /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/, // Letras y espacios
+            /^(sí|no)$/i // "sí" o "no" (insensible a mayúsculas)
+        ];
+            
+            // Eventos
+            iniciarBtn.addEventListener('click', () => {
+                iniciarBtn.style.display = 'none';
+                respuestasDiv.style.display = 'block';
+                mostrarPregunta();
+            });
+            
+            // Manejar el evento de enviar respuesta
+            botonEnviar.addEventListener('click', () => {
+                const respuesta = inputRespuesta.value.trim();
+                if (!respuesta) {
+                    alert("Por favor, introduce una respuesta.");
+                    return;
+                }
+    
+                manejarRespuesta(respuesta);
+                inputRespuesta.value = '';
+                etapa++;
+                if (etapa < preguntas.length) {
+                    mostrarPregunta();
+                } else {
+                    respuestasDiv.style.display = 'none';
+                    mostrarResultado();
+                }
+            });
+            // Funciones
+            
+            function mostrarPregunta() {
+                preguntaEl.textContent = preguntas[etapa];
+            }
+    
+            function manejarRespuesta(respuesta) {
+                if (validaciones[etapa].test(respuesta)) {
+                    switch (etapa) {
+                        case 0:
+                            nombre = respuesta;
+                            break;
+                        case 1:
+                            edad = respuesta;
+                            break;
+                        case 2:
+                            lenguaje = respuesta;
+                            break;
+                        case 3:
+                            respuestaFinal = respuesta.toLowerCase() === 'sí' ? `¡Genial! Sigue aprendiendo 😊.` : `No te preocupes, siempre hay tiempo para cambiar ${nombre} ¡Anímo!😊.`;
+                            break;
+                    }
+                } else {
+                    alert("Respuesta no válida. Intenta de nuevo 😊.");
+                    etapa--;
+                }
+            }
+                
+    
+            function mostrarResultado() {
+                preguntaEl.textContent = `Hola ${nombre}, tienes ${edad} años y estás aprendiendo ${lenguaje}.`;
+                resultadoEl.innerHTML = `<p>${respuestaFinal}</p>`;
+                reiniciarBtn.style.display = 'block';
+                iniciarBtn.style.display = 'none';
+                resultadoEl.classList.add('resultado');
+            }
+
+            function reiniciarCuestionario() {
+                etapa = 0;
+                nombre = '';
+                edad = '';
+                lenguaje = '';
+                respuestaFinal = '';
+                preguntaEl.textContent = 'Presiona el botón "Iniciar Cuestionario" para comenzar.';
+                resultadoEl.style.display = 'none';
+                iniciarBtn.style.display = 'block';
+                reiniciarBtn.style.display = 'none';
+                respuestasDiv.style.display = 'none';
+                inputRespuesta.value = '';
+                preguntaEl.style.display = 'block';
+                resultadoEl.innerHTML = '';
+                resultadoEl.classList.remove('resultado');
+                resultadoEl.style.backgroundColor = '';
+                resultadoEl.style.color = '';
+                resultadoEl.style.padding = '';
+                resultadoEl.style.borderRadius = '';
+            }
+            reiniciarBtn.addEventListener('click', reiniciarCuestionario);
+        </script>
+    </body>
+    </html>

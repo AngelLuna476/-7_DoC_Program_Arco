@@ -1,0 +1,129 @@
+:root {
+  /* Colores */
+  --background-color: #1c1c1c;
+  --text-color: #f4f4f4;
+  --header-gradient-start: #4e4e50;
+  --header-gradient-end: #7c7d7e;
+  --header-text-color: #f9c74f;
+  --shadow-color: #000;
+  --link-bg-color: #3a3a3c;
+  --link-hover-bg-color: #f94144;
+  --link-active-bg-color: #6a994e;
+  --footer-bg-color: #2b2d42;
+  --border-color: #7c7d7e;
+  --numero-border-color: #f94144;
+
+  /* Fuentes */
+  --font-family: 'Press Start 2P', monospace;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+  color: var(--header-text-color);
+  padding: 1rem;
+  text-align: center;
+  text-shadow: 2px 2px var(--shadow-color);
+}
+
+main {
+  padding: 1rem;
+}
+
+.h2 {
+  color: var(--link-hover-bg-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px var(--shadow-color);
+}
+
+.p2 {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-family: var(--font-family);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.link1, .link2, .link3, .link4, .link5, .link6, .link7 {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--link-bg-color);
+  color: var(--header-text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0.5rem;
+  text-align: center;
+  border: 2px solid var(--border-color);
+  box-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.link1:hover, .link2:hover, .link3:hover, .link4:hover, .link5:hover, .link6:hover, .link7:hover {
+  background-color: var(--link-hover-bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.link1:active, .link2:active, .link3:active, .link4:active, .link5:active, .link6:active, .link7:active {
+  background-color: var(--link-active-bg-color);
+  color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.numero1, .numero2, .numero3, .numero4, .numero5, .numero6, .numero7 {
+  display: inline-block;
+  width: 156px;
+  height: 156px;
+  text-align: center;
+  background: var(--background-color) url('pixel-art-metal-texture.jpg');
+  border: 1px solid var(--numero-border-color);
+}
+
+.numero1:hover, .numero2:hover, .numero3:hover, .numero4:hover, .numero5:hover, .numero6:hover, .numero7:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  transition: transform 0.3s ease; 
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10%;
+  background-color: var(--footer-bg-color);
+  color: var(--text-color);
+  text-shadow: 1px 1px var(--shadow-color);
+}
+
+.footerp1, .footerp2, .footerp3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Fuente personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');

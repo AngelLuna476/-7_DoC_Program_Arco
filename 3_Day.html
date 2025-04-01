@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#7_Days_Of_Code (3/7)</title>
+    <a href="index.html" class="button1">Inicio</a>
+</head>
+    <style>
+        :root {
+            --background-color: #1c1c1c;
+            --text-color: #f4f4f4;
+            --header-gradient-start: #4e4e50;
+            --header-gradient-end: #7c7d7e;
+            --header-text-color: #f9c74f;
+            --shadow-color: #000;
+            --button-color: #6a994e;
+            --button-hover-color: #f94144;
+            --font-family-base: 'Press Start 2P', monospace;
+            --link-bg-color: #3a3a3c;
+            --link-hover-bg-color: #f94144;
+            --link-active-bg-color: #6a994e;
+            --footer-bg-color: #4e4e50; /* Define el color de fondo del footer */
+        }
+
+        .button1 { 
+            background-color: var(--primary-color); 
+            color: var(--text-color); 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-size: 1rem; 
+            cursor: pointer;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */ 
+        }
+
+        .button1:hover { 
+            background-color: var(--link-hover-bg-color); 
+            color: var(--text-color); 
+        }
+        .button1 a {
+            color: inherit; /* Hereda el color del botón */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        .main {
+            padding: 20px;
+            margin: auto;
+            margin-bottom: 1%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 75vh; /* Ocupa toda la altura de la ventana */
+            background: linear-gradient(135deg, var(--background-color), var(--header-gradient-start));
+            color: var(--text-color);
+            box-shadow: 0 0 10px var(--shadow-color);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1; /* Asegura que el main esté por encima del footer */
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            display: relative;
+            justify-content: space-between; /* Asegura que el contenido se ajuste */
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+            color: var(--header-text-color);
+            padding: 1rem;
+        }
+
+        .boton {
+            background-color: var(--button-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+        }
+
+        .boton:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        #resultado, #interacciones {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--header-gradient-end);
+            color: var(--header-text-color);
+            box-shadow: 3px 3px 5px var(--shadow-color);
+        }
+
+        .resultado {
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: var(--header-gradient-end);
+            color: var(--header-text-color);
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            padding: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            right: 0;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 0rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+            height: 10vh;
+            background-color: var(--footer-bg-color);
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            padding: 1rem;
+            font-family: var(--font-family-base);
+            font-size: 0.8rem;
+            box-shadow: 0 -2px 5px var(--shadow-color);
+            border: 2px solid red; /* Para visualizarlo */
+            z-index: 10;
+            position: absolute; /* Cambiado a absolute para que esté fijo en la parte inferior */
+            bottom: 0; /* Asegura que esté en la parte inferior */
+        }
+
+        .footerp1, .footerp2, .footerp3 {
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            text-align: center;
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            font-family: var(--font-family-base);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+            z-index: 10;
+            height: 10%;
+        }
+
+        
+
+    </style>
+<body>
+    <header class="header">
+        <h1 class="header_titulo">¿Qué camino deseas seguir entre Back-End o Front-End?</h1>
+    </header>
+    <main class="main">
+        <p class="h2">Se trabaja con estructuras de control de flujo dando preguntas a responder al usuario.</p>
+            <button class="boton" id="iniciar_partida">Iniciar Partida</button>
+            <button class="boton" id="reiniciar_partida" style="display: none;">Reiniciar Partida</button>
+            <p id="instrucciones">Presiona el botón "Iniciar Partida" para comenzar.</p>
+            <div id="interacciones" style="display: none;">
+                <select id="seleccion_opciones"></select>
+                <button class="boton" id="enviar">Enviar</button>
+            </div>
+            <div id="resultado" class="resultado"></div>
+        </main>
+        <footer>
+            <p class="footerp1">Desarrollo del programa por: José Ángel Luna Delgado, idea de diseño del estilo Metal Slug aportado por: Luis Daniel Luna Delgado.</p>
+            <p class="footerp2">Programa de Formación Oracle Next Education/Alura Latam.</p>
+            <strong class="footerp3">&copy; 2025 All rights reserved.</strong>
+        </footer>
+        <script>
+            // Variables globales
+            let tecnologiasElegidas = [];
+            let areaSeleccionada = null;
+    
+            // Referencias a elementos DOM
+            const iniciarBtn = document.getElementById("iniciar_partida");
+            const reiniciarBtn = document.getElementById("reiniciar_partida");
+            const interacciones = document.getElementById("interacciones");
+            const seleccionOpciones = document.getElementById("seleccion_opciones");
+            const enviarBtn = document.getElementById("enviar");
+            const instrucciones = document.getElementById("instrucciones");
+            const resultado = document.getElementById("resultado");
+    
+            const areas = ["Back-End", "Front-End"];
+            const tecnologias = {
+                "Back-End": ["Java", "Python", "PHP", "Ruby", "C++", "Swift", "Go", "Rust"],
+                "Front-End": ["HTML", "CSS", "JavaScript", "React", "Angular", "Vue.js", "Bootstrap", "Sass"]
+            };
+            const especialidad = ["Back-End", "Front-End", "Full-Stack"];            
+    
+            // Función para iniciar la partida
+            function iniciarPartida() {
+                iniciarBtn.style.display = "none";
+                reiniciarBtn.style.display = "inline";
+                interacciones.style.display = "block";
+                seleccionOpciones.innerHTML = ""; // Limpiar opciones
+                tecnologiasElegidas = [];
+                areaSeleccionada = null;
+                especialidadSeleccionada = null;
+    
+                // Mostrar áreas iniciales
+                areas.forEach((area, index) => {
+                    const opcion = document.createElement("option");
+                    opcion.value = index + 1;
+                    opcion.textContent = area;
+                    seleccionOpciones.appendChild(opcion);
+                });
+    
+                instrucciones.textContent = "Selecciona un área:";
+                resultado.textContent = "";
+            }
+    
+            // Manejar selección
+            function manejarSeleccion() {
+                const opcionSeleccionada = parseInt(seleccionOpciones.value);
+    
+                if (areaSeleccionada === null) {
+                    // Elegir el área
+                    areaSeleccionada = areas[opcionSeleccionada - 1];
+                    instrucciones.textContent = "Muy bien 😊 ¿Qué lenguaje de programación te gustaría aprender más?";
+                    actualizarOpciones(tecnologias[areaSeleccionada]);
+                } else if (especialidadSeleccionada === null) {
+                    // Elegir especialidad
+                    especialidadSeleccionada = especialidad[opcionSeleccionada - 1];
+                    instrucciones.textContent = "¿Qué especialidad deseas aprender?";
+                    actualizarOpciones(especialidad);
+                } else if (tecnologiasElegidas.length < 2) {
+                    // Elegir una tecnología
+                    const tecnologiaSeleccionada = tecnologias[areaSeleccionada][opcionSeleccionada - 1];
+                    tecnologiasElegidas.push(tecnologiaSeleccionada);
+                    resultado.textContent = "¡Buena suerte en tu aprendizaje! 😊";
+                    // Mostrar mensaje final
+                    instrucciones.textContent = "¡Excelente elección! Que la fuerza este de tu lado ⚔️🖤.";
+                    reiniciarBtn.style.display = "inline";
+                    interacciones.style.display = "none";
+                }
+              
+            }
+    
+            // Actualizar opciones del menú desplegable
+            function actualizarOpciones(opciones) {
+                seleccionOpciones.innerHTML = ""; // Limpiar opciones
+                opciones.forEach((opcion, index) => {
+                    const nuevaOpcion = document.createElement("option");
+                    nuevaOpcion.value = index + 1;
+                    nuevaOpcion.textContent = opcion;
+                    seleccionOpciones.appendChild(nuevaOpcion);
+                });
+            }
+    
+            // Reiniciar la partida
+            function reiniciarPartida() {
+                iniciarBtn.style.display = "inline";
+                reiniciarBtn.style.display = "none";
+                interacciones.style.display = "none";
+                instrucciones.textContent = "Presiona el botón 'Iniciar Partida' para comenzar.";
+                resultado.textContent = "";
+            }
+    
+            // Eventos
+            iniciarBtn.addEventListener("click", iniciarPartida);
+            enviarBtn.addEventListener("click", manejarSeleccion);
+            reiniciarBtn.addEventListener("click", reiniciarPartida);
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>#7_Days_Of_Code (6/7)</title>
+    <a href="index.html" class="button1">Inicio</a>
+</head>
+<style>
+    :root {
+        /* Colores */
+        --background-color: #1c1c1c;
+        --text-color: #f4f4f4;
+        --header-gradient-start: #000000;
+        --header-gradient-end: #7c7d7e;
+        --header-text-color: #f9c74f;
+        --shadow-color: #000;
+        --link-bg-color: #3a3a3c;
+        --link-hover-bg-color: #f94144;
+        --link-active-bg-color: #6a994e;
+        --footer-bg-color: #2b2d42;
+        --border-color: #7c7d7e;
+        --numero-border-color: #f94144;
+  
+        /* Fuentes */
+        --font-family-base: 'Press Start 2P', monospace;
+        --font-family-alt: 'Press Start 2P', monospace;
+        --font-family-header: 'Press Start 2P', monospace;
+  
+        /* Estilos Generales */
+        --border-radius: 10px;
+        --font-size-base: 1em;
+        --line-height-base: 1.6;
+    }
+  
+    /* Cuerpo */
+    body {
+        font-family: var(--font-family-base);
+        margin: 0;
+        padding: 0;
+        background-color: var(--link-bg-color);
+        color: var(--text-color);
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-base);
+        display: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+  
+    /* Encabezado */
+    .header {
+        background: linear-gradient(135deg, var(--header-gradient-end), var(--header-gradient-end));
+        color: var(--header-text-color);
+        padding: 1rem;
+        text-align: center;
+        text-shadow: 2px 2px var(--shadow-color);
+        border: #000000 1px solid;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 8px var(--shadow-color);
+        font-family: var(--font-family-header);
+    }
+  
+    /* Botón */
+    .button1 {
+        background-color: var(--link-active-bg-color);
+        color: var(--text-color);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 3px 3px 5px var(--shadow-color);
+        transition: background-color 0.3s, color 0.3s;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        font-family: var(--font-family-base);
+        font-weight: bold;
+        text-align: center;
+        display: inline-block;
+        text-shadow: 1px 1px var(--shadow-color);
+    }
+  
+    .button1:hover {
+        background-color: var(--link-hover-bg-color);
+        color: var(--background-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .button1 a {
+            color: inherit; /* Hereda el color del botón */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+    /*imagenes de botones*/
+
+    .main_lista_titulo_agregar,
+    .main_lista_titulo_eliminar,
+    .main_lista_titulo_mostrar {
+        background-color: transparent;
+        border-radius: var(--border-radius);
+    }
+
+    .agregarProducto, .eliminarProducto, .mostrarLista {
+        margin-bottom: 0px; 
+        width: 156px; 
+        height: 156px; 
+        margin: 0 auto; 
+        padding: 0; 
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: auto;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 8px var(--shadow-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--link-active-bg-color);
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .agregarProducto:hover, .eliminarProducto:hover, .mostrarLista:hover {
+        transform: scale(1.1);
+        border-radius: var(--border-radius);
+        transition: transform 0.3s ease;
+        background: var(--background-color) url('pixel-art-metal-texture.jpg');
+    }
+
+    /* Texto de la lista */
+    .lista-compras{ 
+        text-align: left; 
+        color: var(--text-color); 
+        font-family: var(--font-family-base); 
+        font-size: large; 
+        width: auto; 
+        height: auto;
+        margin: 0 auto; 
+        margin-top: 100px; 
+        margin-bottom: 100px; 
+        margin-left: auto; 
+        margin-right: auto; 
+        padding: 0; 
+        border: none; 
+        background-color: var(--background-color); 
+        align-items: stretch; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: var(--border-radius);
+        box-shadow: 0 4px 8px var(--shadow-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--link-active-bg-color);
+        cursor: pointer;
+    }
+  
+    /* Footer */
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 0rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 10%;
+        background-color: var(--footer-bg-color);
+        color: var(--text-color);
+        text-shadow: 1px 1px var(--shadow-color);
+    }
+
+    .footerp1, .footerp2, .footerp3 {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        text-align: center;
+        color: var(--text-color);
+    }
+</style>
+<body class="body">
+    <header class="header">
+        <h1 class="header_titulo">LISTA DE COMPRAS (Ver.2.0.0.)</h1>
+    </header>
+    <main class="main_lista">
+        <p class="main_lista_texto">Para agregar productos, favor de pulsar el incono de +, para eliminar el de -, y para vizualizar lo añadido en el incono de lista.
+        Se muestran las categorias de Frutas, Lacteos, Dulces, Congelados, Cereales, Carnes y lo que se ingreso.
+        </p>
+        <button class= "main_lista_titulo_agregar" onclick="agregarComida()"><img src="agregarProducto.png" alt="Ícono para agregar" class="agregarProducto"></button>
+        <button class= "main_lista_titulo_eliminar" onclick="eliminarComida()"><img src="eliminarProducto.png" alt="Ícono para eliminar" class="eliminarProducto"></button>
+        <button class= "main_lista_titulo_mostrar" onclick="mostrarListaDeCompras()"><img src="mostrarLista.jpg" alt="Ícono para mostrar lista" class="mostrarLista"></button>
+        <div id="lista-compras" class="lista-compras"></div>
+    </main>
+    <script>
+        const categorias = {
+            frutas: [],
+            lacteos: [],
+            dulces: [],
+            congelados: [],
+            cereales: [],
+            carnes: [],
+            abarrotes: [],
+            bebidas: [],
+            panaderia: [],
+            limpieza: [],
+            higiene: [],
+            condimentos: [],
+            snacks: [],
+            especias: [],
+            conservas: [],
+            legumbres: [],
+            pastas: [],
+            salsas: [],
+            aceites: [],
+            especias: [],
+            cereales: [],
+        };
+
+        const solicitarEntrada = (mensaje, opcionesValidas = null) => {
+            let respuesta;
+            do {
+                respuesta = prompt(mensaje).toLowerCase();
+            if (opcionesValidas && !opcionesValidas.includes(respuesta)) {
+                alert(`Por favor, responde con una de las siguientes opciones: ${opcionesValidas.join(", ")}.`);
+                respuesta = null;
+            }
+            } while (!respuesta);
+                return respuesta;
+        };
+
+        const manejarComida = (accion) => {
+        const preguntaAccion = `¿Deseas ${accion} una comida a la lista de compras? Responde 'sí' o 'no'.`;
+        const mensajeCategoria = "¿En qué categoría encaja esta comida? categorías válidas: " + Object.keys(categorias).join(", ") + ".";
+        const categoriasValidas = Object.keys(categorias).join(", ");
+        const mensajeCategorias = `Las categorías válidas son: ${categoriasValidas}.`;
+
+            let continuar = "sí";
+            while (continuar === "sí") {
+                    continuar = solicitarEntrada(preguntaAccion, ["sí", "no"]);
+                if (continuar === "no") break;
+
+                    let comida = solicitarEntrada(`¿Qué comida deseas ${accion}?`);
+                    let categoria = solicitarEntrada(mensajeCategoria);
+
+                if (categorias[categoria]) {
+                    if (accion === "agregar") {
+                        categorias[categoria].push(comida);
+                    } else if (accion === "eliminar") {
+                        let index = categorias[categoria].indexOf(comida);
+                        index !== -1 ? categorias[categoria].splice(index, 1) : alert("Esa comida no está en la lista.");
+                    }
+                } else {
+                    alert("Esa categoría no está predefinida.");
+                }
+            }   
+        };
+
+        const mostrarListaDeCompras = () => {
+            let mensaje = "<h2>Lista de compras:</h2><ul>";
+            for (let categoria in categorias) {
+                mensaje += `<li><strong>${categoria.charAt(0).toUpperCase() + categoria.slice(1)}:</strong> ${categorias[categoria].join(", ")}</li>`;
+            }
+            mensaje += "</ul>";
+            document.getElementById("lista-compras").innerHTML = mensaje;
+        };
+
+        const agregarComida = () => manejarComida("agregar");
+        const eliminarComida = () => manejarComida("eliminar");
+    </script>
+</body>
+<footer class="footer">
+    <p class="footerp1">Desarrollo del programa por: José Ángel Luna Delgado, idea de diseño del estilo Metal Slug aportado por: Luis Daniel Luna Delgado</p>
+    <p class="footerp2">Programa de Formación Oracle Next Education/Alura Latam</p>
+    <strong class="footerp3">&copy; 2025 All rights reserved.</strong>
+</footer>
+</html>

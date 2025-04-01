@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#7_Days_Of_Code (4/7)</title>
+    <a href="index.html" class="button1">Inicio</a>
+    <style>
+        :root {
+            --background-color: #1c1c1c;
+            --text-color: #f4f4f4;
+            --header-gradient-start: #4e4e50;
+            --header-gradient-end: #7c7d7e;
+            --header-text-color: #f9c74f;
+            --shadow-color: #000;
+            --button-color: #6a994e;
+            --button-hover-color: #f94144;
+            --font-family-base: 'Press Start 2P', monospace;
+            --link-bg-color: #3a3a3c;
+            --link-hover-bg-color: #f94144;
+            --link-active-bg-color: #6a994e;
+            --footer-bg-color: #4e4e50; /* Define el color de fondo del footer */
+        }
+
+        .button1 { 
+            background-color: var(--primary-color); 
+            color: var(--text-color); 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-size: 1rem; 
+            cursor: pointer;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */ 
+        }
+
+        .button1:hover { 
+            background-color: var(--link-hover-bg-color); 
+            color: var(--text-color); 
+        }
+        .button1 a {
+            color: inherit; /* Hereda el color del botón */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        .main {
+            padding: 20px;
+            margin: auto;
+            margin-bottom: 1%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 75vh; /* Ocupa toda la altura de la ventana */
+            background: linear-gradient(135deg, var(--background-color), var(--header-gradient-start));
+            color: var(--text-color);
+            box-shadow: 0 0 10px var(--shadow-color);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1; /* Asegura que el main esté por encima del footer */
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-between; /* Asegura que el contenido se ajuste */
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+            color: var(--header-text-color);
+            padding: 1rem;
+        }
+
+        .boton {
+            background-color: var(--button-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+        }
+
+        .boton:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        #resultado, #interacciones {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: var(--header-gradient-end);
+            color: var(--header-text-color);
+            box-shadow: 3px 3px 5px var(--shadow-color);
+        }
+
+        .resultado {
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: var(--header-gradient-end);
+            color: var(--header-text-color);
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            padding: 10px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            right: 0;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 0rem;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+            height : 10%;
+            background-color: var(--footer-bg-color);
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            padding: 1rem;
+            font-family: var(--font-family-base);
+            font-size: 0.8rem;
+            box-shadow: 0 -2px 5px var(--shadow-color);
+            border: 2px solid red; /* Para visualizarlo */
+            z-index: 10;
+            position: absolute; /* Cambiado a absolute para que esté fijo en la parte inferior */
+        }
+
+        .footerp1, .footerp2, .footerp3 {
+            margin: 0;
+            padding: 0;
+            font-size: 1rem;
+            text-align: center;
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            font-family: var(--font-family-base);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            right: 0;
+            z-index: 10;
+            height: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Juego de Adivinar el Número Secreto</h1>
+    </header>
+    <main class="main">
+        <h2>¡Bienvenido al juego!</h2>
+        <button class="boton" id="iniciar-juego">Iniciar Juego</button>
+        <button class="boton" id="reiniciar-juego" style="display: none;">Reiniciar Juego</button>
+        <p id="instrucciones">Presiona el botón "Iniciar Juego" para comenzar.</p>
+        <div id="interacciones">
+            <p id="indicaciones"></p>
+            <input type="number" id="entrada-numero" placeholder="Ingresa un número (1-10)" style="display: none;">
+            <button class="boton" id="enviar" style="display: none;">Enviar</button>
+        </div>
+        <div id="resultado" class="resultado"></div>
+    </main>
+    <footer>
+        <p class="footerp1">Desarrollo del programa por: José Ángel Luna Delgado, idea de diseño del estilo Metal Slug aportado por: Luis Daniel Luna Delgado.</p>
+        <p class="footerp2">Programa de Formación Oracle Next Education/Alura Latam.</p>
+        <strong class="footerp3">&copy; 2025 All rights reserved.</strong>
+    </footer>
+    <script>
+        
+        let numeroSecreto, intentos;
+
+        function iniciarJuego() {
+            intentos = 1;
+            numeroSecreto = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("indicaciones").textContent = "Tienes 3 intentos para adivinar el número secreto. ¡Escribe un número del 1 al 10!";
+            document.getElementById("entrada-numero").style.display = "inline";
+            document.getElementById("enviar").style.display = "inline";
+            document.getElementById("resultado").textContent = ""; // Reiniciar resultados
+        }
+
+        function verificarNumero() {
+            const numero = parseInt(document.getElementById("entrada-numero").value);
+
+            if (isNaN(numero) || numero < 1 || numero > 10) {
+                document.getElementById("resultado").textContent = "Por favor, ingresa un número válido entre 1 y 10.";
+                return;
+            }
+
+            if (numero === numeroSecreto) {
+                document.getElementById("resultado").textContent = `¡Felicidades! Adivinaste el número secreto: ${numeroSecreto}.   `;
+                document.getElementById("entrada-numero").style.display = "none";
+                document.getElementById("enviar").style.display = "none";
+                document.getElementById("indicaciones").textContent = "Presiona el botón 'Reiniciar Juego' para jugar de nuevo.";
+                document.getElementById("reiniciar-juego").style.display = "inline";
+                document.getElementById("iniciar-juego").style.display = "none";
+                document.getElementById("resultado").style.display = "inline";
+                document.getElementById("entrada-numero").value = ""; // Limpiar el campo de entrada
+                document.getElementById("entrada-numero").focus(); // Enfocar el campo de entrada
+
+                return;
+            } else if (numero < numeroSecreto) {
+                document.getElementById("resultado").textContent = "El número que ingresaste es menor al número secreto.";
+            } else {
+                document.getElementById("resultado").textContent = "El número que ingresaste es mayor al número secreto.";
+            }
+
+            intentos++;
+            if (intentos > 3) {
+                document.getElementById("resultado").textContent = `Lo siento, no has adivinado el número secreto. Era ${numeroSecreto}.`;
+                document.getElementById("entrada-numero").style.display = "none";
+                document.getElementById("enviar").style.display = "none";
+                document.getElementById("reiniciar-juego").style.display = "inline";
+                document.getElementById("iniciar-juego").style.display = "none";
+                document.getElementById("indicaciones").textContent = "Presiona el botón 'Reiniciar Juego' para jugar de nuevo.";
+            } else {
+                document.getElementById("entrada-numero").value = ""; // Limpiar el campo de entrada
+                document.getElementById("entrada-numero").focus(); // Enfocar el campo de entrada
+            }
+        }
+
+        function reiniciarJuego() {
+            document.getElementById("reiniciar-juego").style.display = "none";
+            document.getElementById("iniciar-juego").style.display = "inline";
+            document.getElementById("entrada-numero").style.display = "none";
+            document.getElementById("entrada-numero").value = ""; // Limpiar el campo de entrada
+            document.getElementById("entrada-numero").focus(); // Enfocar el campo de entrada
+            document.getElementById("enviar").style.display = "none";
+            document.getElementById("resultado").textContent = "";
+            document.getElementById("indicaciones").textContent = "Presiona el botón 'Iniciar Juego' para comenzar.";
+
+        }
+
+        document.getElementById("reiniciar-juego").addEventListener("click", reiniciarJuego);
+        document.getElementById("iniciar-juego").addEventListener("click", iniciarJuego);
+        document.getElementById("enviar").addEventListener("click", verificarNumero);
+
+    </script>
+</body>
+</html>

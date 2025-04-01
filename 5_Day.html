@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>#7_Days_Of_Code (5/7)</title>
+    <a href="index.html" class="button1">Inicio</a>
+    <style>
+        :root {
+            /* Colores */
+            --background-color: #1c1c1c;
+            --text-color: #f4f4f4;
+            --header-gradient-start: #4e4e50;
+            --header-gradient-end: #7c7d7e;
+            --header-text-color: #f9c74f;
+            --shadow-color: #000;
+            --link-bg-color: #3a3a3c;
+            --link-hover-bg-color: #f94144;
+            --link-active-bg-color: #6a994e;
+            --footer-bg-color: #2b2d42;
+            --border-color: #7c7d7e;
+
+            /* Fuentes */
+            --font-family-base: 'Press Start 2P', monospace;
+
+            /* Estilos Generales */
+            --border-radius: 10px;
+            --font-size-base: 1em;
+            --line-height-base: 1.6;
+        }
+
+        .button1 { 
+            background-color: var(--primary-color); 
+            color: var(--text-color); 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-size: 1rem; 
+            cursor: pointer;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */ 
+        }
+
+        .button1:hover { 
+            background-color: var(--link-hover-bg-color); 
+            color: var(--text-color); 
+        }
+        .button1 a {
+            color: inherit; /* Hereda el color del botón */
+            text-decoration: none; /* Sin subrayado */
+        }
+
+        /* Cuerpo */
+        body {
+            font-family: var(--font-family-base);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            align-items: center;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, var(--header-gradient-start), var(--header-gradient-end));
+            color: var(--header-text-color);
+            padding: 1rem;
+            text-align: center;
+            text-shadow: 2px 2px var(--shadow-color);
+        }
+
+        /* Contenedor principal */
+        .main {
+            padding: 20px;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* Botones interactivos */
+        .boton {
+            background-color: var(--link-active-bg-color);
+            color: var(--text-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 3px 3px 5px var(--shadow-color);
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .boton:hover {
+            background-color: var(--link-hover-bg-color);
+            transform: scale(1.1);
+        }
+
+        /* Lista dinámica */
+        .lista-compras {
+            text-align: left;
+            color: var(--text-color);
+            font-family: var(--font-family-base);
+            font-size: large;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            background-color: rgba(0, 0, 0, 0.8); /* Transparente */
+        }
+
+        .lista-compras ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .lista-compras li {
+            padding: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .lista-compras li:hover {
+            background-color: var(--link-hover-bg-color);
+        }
+
+        /* Mensaje dinámico */
+        .mensaje-accion {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--link-hover-bg-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mensaje-accion.mostrar {
+            opacity: 1;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 0rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3.5rem;
+            background-color: var(--footer-bg-color);
+            color: var(--text-color);
+            text-shadow: 1px 1px var(--shadow-color);
+            padding: 1rem;
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
+            box-shadow: 0 -2px 5px var(--shadow-color);
+
+        }
+
+        .footerp1, .footerp2, .footerp3 {
+            margin: 0;
+            padding: 0;
+            font-size: 0.8rem;
+            text-align: center;
+            color: var(--text-color);
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            text-shadow: 1px 1px var(--shadow-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lista de Compras (Ver.1.0.0)</h1>
+    </header>
+    <main class="main">
+        <button class="boton" id="btn-agregar">Agregar Comida</button>
+        <button class="boton" id="btn-mostrar">Mostrar Lista</button>
+        <div id="mensaje-accion" class="mensaje-accion"></div>
+        <div id="lista-compras" class="lista-compras"></div>
+    </main>
+    <footer>
+        <p class="footerp1">Desarrollo del programa por: José Ángel Luna Delgado, idea de diseño del estilo Metal Slug aportado por: Luis Daniel Luna Delgado.</p>
+        <p class="footerp2">Programa de Formación Oracle Next Education/Alura Latam.</p>
+        <strong class="footerp3">&copy; 2025 All rights reserved.</strong>
+    </footer>
+    <script>
+        const categorias = {
+            frutas: [],
+            lacteos: [],
+            dulces: [],
+            congelados: [],
+            cereales: [],
+            carnes: [],
+            abarrotes: [],
+            bebidas: [],
+            panaderia: [],
+            limpieza: [],
+            higiene: [],
+            condimentos: [],
+            snacks: [],
+            especias: [],
+            conservas: [],
+            legumbres: [],
+            pastas: [],
+            salsas: [],
+            aceites: [],
+            especias: [],
+            cereales: [],
+        };
+
+        const solicitarEntrada = (mensaje, opcionesValidas = null) => {
+            let respuesta;
+            do {
+                respuesta = prompt(mensaje);
+                if (respuesta) {
+                    respuesta = respuesta.toLowerCase();
+                }
+            if (opcionesValidas && (!respuesta || !opcionesValidas.includes(respuesta))) {
+                    alert(`Por favor, responde con una de las siguientes opciones: ${opcionesValidas.join(", ")}.`);
+                    respuesta = null;
+                }
+            } while (!respuesta);
+                return respuesta;
+        };
+
+        const manejarComida = (accion) => {
+        const preguntaAccion = `¿Deseas ${accion} una comida a la lista de compras? Responde 'sí' o 'no'.`;
+        const mensajeCategoria = "¿En qué categoría encaja esta comida según la lista de abajo?";
+
+            let continuar = "sí";
+                while (continuar === "sí") {
+                    continuar = solicitarEntrada(preguntaAccion, ["sí", "no"]);
+                if (continuar === "no") break;
+
+                const comida = solicitarEntrada(`¿Qué comida deseas ${accion}?`);
+                const categoria = solicitarEntrada(mensajeCategoria, Object.keys(categorias));
+
+                if (categorias[categoria]) {
+                    if (accion === "agregar") {
+                        categorias[categoria].push(comida);
+                        mostrarMensaje(`"${comida}" agregado a "${categoria}".`);
+                } else if (accion === "eliminar") {
+                        const index = categorias[categoria].indexOf(comida);
+                    if (index !== -1) {
+                            categorias[categoria].splice(index, 1);
+                                mostrarMensaje(`"${comida}" eliminado de "${categoria}".`);
+                    } else {
+                            alert(`"${comida}" no está en la lista de "${categoria}".`);
+                    }
+                }
+                    actualizarLista(); // Actualización automática
+                 } else {
+                    alert("Esa categoría no está predefinida.");
+                }
+            }
+        };
+
+        const mostrarMensaje = (mensaje) => {
+            const mensajeDiv = document.querySelector("#mensaje-accion");
+            if (mensajeDiv) {
+                mensajeDiv.innerHTML = mensaje;
+                mensajeDiv.classList.add("mostrar");
+                setTimeout(() => mensajeDiv.classList.remove("mostrar"), 3000);
+            } else {
+                console.warn("El elemento #mensaje-accion no se encontró.");
+            }
+        };
+
+        const actualizarLista = () => {
+            const listaDiv = document.querySelector("#lista-compras");
+            if (!listaDiv) return;
+
+            listaDiv.innerHTML = "<h2>Lista de compras:</h2><ul>";
+            for (const categoria in categorias) {
+                const items = categorias[categoria];
+             listaDiv.innerHTML += `
+                    <li><strong>${categoria.charAt(0).toUpperCase() + categoria.slice(1)}:</strong> ${items.join(", ") || "Sin elementos"}</li>`;
+            }
+            listaDiv.innerHTML += "</ul>";
+        };
+
+        document.querySelector("#btn-agregar").addEventListener("click", () => manejarComida("agregar"));
+        document.querySelector("#btn-mostrar").addEventListener("click", actualizarLista);
+
+        actualizarLista();
+        document.querySelector("#mensaje-accion").classList.remove("mostrar");
+        document.querySelector("#mensaje-accion").classList.add("mostrar");
+        document.querySelector("#mensaje-accion").textContent = "¡Bienvenido a la lista de compras! Puedes agregar o mostrar elementos.";
+    </script>
+</body>
+</html>
+
