@@ -1,4 +1,5 @@
-<h1 align="center"><strong>#7 DoC (Program_Arco)</strong></h1>
+<h1 align="center"><strong><em>#7 DoC (Program_Arco)</em></strong></h1>
+
 
 <p align="center"><em>Programa de formación ORACLE NEX EDUCATION en conjunto con ALURA LATAM</em></p>
 
