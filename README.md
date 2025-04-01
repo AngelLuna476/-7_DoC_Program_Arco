@@ -1,7 +1,7 @@
-<h1 align="center"><strong><em>#7 DoC (Program_Arco)</em></strong></h1>
+<h1 align="center"><strong>#7 DoC (Program_Arco)</strong></h1>
 
 
-<p align="center"><em>Programa de formación ORACLE NEX EDUCATION en conjunto con ALURA LATAM</em></p>
+<p align="center"><strong><em>Programa de formación ORACLE NEX EDUCATION en conjunto con ALURA LATAM</em></strong></p>
 
 El siguiente codigo contiene todos los ejericios realizados durante la semana de #7_Days_of_Code, el cual consiste en la realización de ejercicios diarios durante una semana
 con el proposito de mejorar las habilidades de programación, la página fue realizada por iniciativa propia para poner en práctica lo aprendido hasta el momento en la Formación
