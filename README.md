@@ -33,7 +33,10 @@ Las instrucciones se encuentran al entrar a la página web
 ## Licencias y uso:
 
 _**Licencia Educativa Personal:**_
-_> Este repositorio ha sido creado por iniciativa personal de José Ángel Luna Delgado, utilizando como base ejercicios del programa educativo "#7 Days of Code" en el marco del Oracle Next Education (ONE) en colaboración con Alura Latam._
-_> El contenido aquí incluido está destinado exclusivamente a fines educativos y de aprendizaje personal. No se autoriza su uso con fines comerciales ni la redistribución como material original para evaluaciones académicas, cursos o productos._
-_> Se reconoce y respeta la propiedad intelectual de Alura Latam y Oracle Next Education por los materiales base. Si alguna institución desea solicitar modificación o retiro de contenido, se atenderá dicha solicitud con respeto y disposición._
+_Este repositorio ha sido creado por iniciativa personal de José Ángel Luna Delgado, utilizando como base ejercicios del programa educativo "#7 Days of Code" en el marco del Oracle Next Education (ONE) en colaboración con Alura Latam._
+
+_El contenido aquí incluido está destinado exclusivamente a fines educativos y de aprendizaje personal. No se autoriza su uso con fines comerciales ni la redistribución como material original para evaluaciones académicas, cursos o productos._
+
+_Se reconoce y respeta la propiedad intelectual de Alura Latam y Oracle Next Education por los materiales base. Si alguna institución desea solicitar modificación o retiro de contenido, se atenderá dicha solicitud con respeto y disposición._
+
 _Copyright © 2025 José Ángel Luna Delgado. Todos los derechos reservados para el contenido transformado y original presente en este repositorio._
