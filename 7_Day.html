@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>#7_Days_Of_Code (7/7)</title>
     <a href="index.html" class="button1">Inicio</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <style>
@@ -246,6 +247,60 @@
             color: var(--text-color);
         }
 
+        @media screen and (max-width: 480px) {
+            body {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+
+            .calculator {
+                width: 100%;
+                height: auto;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .button1 {
+                position: static;
+                margin-bottom: 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .buttons button {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
+            }
+
+            .result {
+                font-size: 1.2rem;
+                height: 60px;
+            }
+    
+            .footer {
+                font-size: 0.8rem;
+                height: auto;
+                padding: 10px;
+            }
+
+            .operators {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .clearResult img,
+            .result2 img {
+                width: 60px;
+                height: 60px;
+            }
+        }
         
     </style>
     <div class="calculator">
@@ -300,3 +355,4 @@
     <strong class="footerp3">&copy; 2025 All rights reserved.</strong>
 </footer>
 </html>
+
